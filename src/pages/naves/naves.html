@@ -1,5 +1,5 @@
 <!--
-  Generated template for the PlanetsPage page.
+  Generated template for the NavesPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Planeta</ion-title>
+    <ion-title>Naves</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,6 +15,6 @@
 
 <ion-content padding>
 <ion-list>
-  <planet-info *ngFor="let planet of planets" [planet]="planet"></planet-info>
+  <nave-info (click)="showDetail(nave)" *ngFor="let nave of naves" [nave]="nave"></nave-info>
 </ion-list>
 </ion-content>

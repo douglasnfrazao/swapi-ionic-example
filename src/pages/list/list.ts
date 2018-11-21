@@ -17,4 +17,8 @@ export class ListPage {
   goToPlanets() {
     this.navCtrl.push("PlanetsPage");
   }
+
+  goToNaves() {
+    this.navCtrl.push("NavesPage")
+  }
 }

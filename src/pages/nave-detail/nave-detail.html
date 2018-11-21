@@ -1,0 +1,22 @@
+<!--
+  Generated template for the NaveDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{nave.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <p>Capacidade de carga: {{nave.cargo_capacity}}</p>
+  <p>Autonomia: {{nave.consumables}}</p>
+
+  <div *ngIf="nave.pilots && nave.pilots.length > 0">
+    <h2>Pilotos:</h2>
+    <pilot-info [pilotUrl]="pilot" *ngFor="let pilot of nave.pilots"></pilot-info>
+  </div>
+</ion-content>

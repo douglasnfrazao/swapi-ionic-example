@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { PlanetsProvider } from '../../providers/planets/planets';
 
 /**
  * Generated class for the PlanetsPage page.
@@ -15,11 +16,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PlanetsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  planets : Array<any> = []
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public planetsProvider: PlanetsProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PlanetsPage');
+    this.planetsProvider.getPlanets().subscribe(res => {
+      this.planets = res.results
+      console.log(this.planets)
+    })
   }
 
 }
